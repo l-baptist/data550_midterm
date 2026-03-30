@@ -1,0 +1,49 @@
+README
+================
+
+`data/`
+
+- dataset as csv
+
+- data dictionary as csv
+
+Code Description
+
+`code/01_data_clean.R`git init
+
+- loads and cleans data
+
+- adds labels
+
+- saves cleaned dataset as a .rds object in `data/` folder
+
+`code/02_make_visuals`
+
+- reads in cleaned data
+
+- makes figures and saves in the `output/` folder
+
+`code/03_regression.R`
+
+- creates a logistic regression model for each of the outcome variables
+
+- saves the results in the `output` folder
+
+`code/render_report.R`
+
+- renders report.Rmd
+
+`report.Rmd`
+
+- reads cleaned data created by code/data_clean.R
+
+- creates a descriptive table
+
+- reads in contents of the `results/` folder
+
+`Makefile`
+
+- can be used to render the contents of the code/ folder, including
+  rendering the report
+
+- can remove .rds, .png, and .html files using the clean command
