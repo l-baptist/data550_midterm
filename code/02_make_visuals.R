@@ -10,7 +10,7 @@ df_hosp <- df %>% filter(PATIENT_TYPE == "hospitalization")
 comorbidity_vars <- c("DIABETES", "COPD", "ASTHMA", "INMSUPR",
                       "HIPERTENSION", "CARDIOVASCULAR", "OBESITY",
                       "RENAL_CHRONIC", "TOBACCO", "OTHER_DISEASE")
-
+#------------------------------------------------------------------------
 # Age group visualization
 df_hosp <- df_hosp %>%
   mutate(age_group = cut(AGE,
@@ -46,6 +46,7 @@ p_age <- ggplot(age_summary, aes(x = age_group, y = prop)) +
 ggsave(here("output", "fig_intubation_by_age.png"),
        plot = p_age, width = 8, height = 5, dpi = 300)
 
+#------------------------------------------------------------------------
 # Sex Visualization
 sex_summary <- df_hosp %>%
   filter(!is.na(INTUBED), !is.na(SEX)) %>%
@@ -75,6 +76,7 @@ p_sex <- ggplot(sex_summary, aes(x = SEX, y = prop)) +
 ggsave(here("output", "fig_intubation_by_sex.png"),
        plot = p_sex, width = 6, height = 5, dpi = 300)
 
+#------------------------------------------------------------------------
 # Comorbidity category visualization 
 # Lock in factor order so plot reads None → 1 → 2+
 df_hosp <- df_hosp %>%
