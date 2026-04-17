@@ -1,3 +1,5 @@
+export WHICH_CONFIG = default
+
 report.html: report.Rmd code/04_render_report.R figures regression
 	Rscript code/04_render_report.R
 

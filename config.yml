@@ -1,0 +1,6 @@
+default:
+  confirmed: TRUE
+  
+all:
+  confirmed: FALSE
+  

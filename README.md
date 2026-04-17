@@ -1,28 +1,31 @@
 README
 ================
 
+This code renders a report showing the associations of sverable
+covariate and several outcomes, using COVID-19 data from Mexico.
+
 `data/`
 
-- dataset as csv
+- Dataset as csv
 
-- data dictionary as csv
+- Data dictionary as csv
 
 Code Description
 
 `code/01_data_clean.R`git init
 
-- loads and cleans data
+- Loads and cleans data
 
-- adds labels
+- Adds labels
 
-- saves cleaned dataset as a .rds object (`clean_data.rds`) in `data/`
+- Saves cleaned dataset as a .rds object (`clean_data.rds`) in `data/`
   folder
 
 `code/02_make_visuals`
 
-- reads in cleaned data
+- Reads in cleaned data
 
-- makes figures and saves in the `output/` folder
+- Makes figures and saves in the `output/` folder
 
   - `fig_intubation_by_age.png`
 
@@ -32,26 +35,30 @@ Code Description
 
 `code/03_regression.R`
 
-- creates a logistic regression model for each of the outcome variables
+- Creates a logistic regression model for each of the outcome variables
 
-- saves the results as an rds object (`table_regression_results.rds`) in
+- Saves the results as an rds object (`table_regression_results.rds`) in
   the `output` folder
 
 `code/render_report.R`
 
-- renders report.Rmd
+- Renders report.Rmd
 
 `report.Rmd`
 
-- reads cleaned data created by code/data_clean.R
+- Reads cleaned data created by code/data_clean.R
 
-- creates a descriptive table
+- Creates a descriptive table
 
-- reads in contents of the `results/` folder
+- Reads in contents of the `results/` folder
 
 `Makefile`
 
-- can be used to render the contents of the code/ folder, including
+- Can be used to render the contents of the code/ folder, including
   rendering the report
 
-- can remove .rds, .png, and .html files using the clean command
+- Can remove .rds, .png, and .html files using the clean command
+
+- The variable `WHICH_CONFIG` has specifies using the default setting of
+  only including confirmed cases. To include all possible cases, change
+  `WHICH_CONFIG` to `all`
