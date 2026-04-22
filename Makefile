@@ -12,9 +12,9 @@ data_prep: data/covid_sub.csv code/01_clean_data.R
 
 .PHONY: clean
 clean:
-	rm -f output/*.rds && rm -f output/*.png && rm -f data/*.rds && rm -f report.html
+	rm -f output/*.rds && rm -f output/*.png && rm -f data/*.rds && rm -f report*.html
 	
 .PHONY: install
 install:
-  Rscript -e "renv::restore(prompt = FALSE)"
+	Rscript -e "renv::restore(prompt = FALSE)"
     

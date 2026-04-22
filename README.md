@@ -16,7 +16,7 @@ Code Description
 
 - Loads and cleans data
 
-- Adds labels
+- Filters data based on WHICH_CONFIG
 
 - Saves cleaned dataset as a .rds object (`clean_data.rds`) in `data/`
   folder
