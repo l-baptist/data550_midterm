@@ -21,7 +21,6 @@ dat_model <- clean_data %>%
     RENAL_CHRONIC = if_else(RENAL_CHRONIC == "Yes", 1, if_else(RENAL_CHRONIC == "No", 0, NA_real_)),
     TOBACCO = if_else(TOBACCO == "Yes", 1, if_else(TOBACCO == "No", 0, NA_real_))
   ) %>%
-  filter(CLASIFFICATION_FINAL <= 3) %>%
   select(
     DEATH, ICU, INTUBED, AGE, SEX, PNEUMONIA, DIABETES, COPD,
     ASTHMA, INMSUPR, HIPERTENSION, CARDIOVASCULAR,
